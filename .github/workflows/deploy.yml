@@ -131,4 +131,4 @@ jobs:
       - name: Upload Private Key to S3
         if: github.event_name == 'push' && github.ref == 'refs/heads/main' && success() 
         run: |
-          aws s3 cp ./Infra/modules/ec2/private_key.pem s3://terraform-state-backend-vamsee/private-key.pem
+          aws s3 cp ./Infra/modules/key_pair/private_key.pem s3://terraform-state-backend-vamsee/private-key.pem
