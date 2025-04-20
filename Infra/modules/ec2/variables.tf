@@ -21,6 +21,6 @@ variable "security_group_id" {
 }
 
 variable "key_name" {
-  description = "The security group ID to associate with the instance"
+  description = "key_pair"
   type = string
 }
