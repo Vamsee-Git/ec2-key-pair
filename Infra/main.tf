@@ -5,6 +5,9 @@ module "vpc" {
   availability_zone  = var.availability_zone
 }
 
+module "key_pair" {
+  source             = "./modules/key_pair"
+  key_name           = var.key_name
 
 
 module "ec2" {
@@ -13,4 +16,5 @@ module "ec2" {
   instance_type     = var.instance_type
   subnet_id         = module.vpc.public_subnets[0]
   security_group_id = module.vpc.security_group_id
+  key_name          = var.key_name
 }
